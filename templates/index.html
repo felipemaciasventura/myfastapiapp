@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastAPI Demo</title>
+</head>
+<body>
+    <h1>{{ message }}</h1>
+    <p>Esta es una página de ejemplo renderizada por FastAPI usando Jinja2.</p>
+    <p>Puedes probar los siguientes endpoints:</p>
+    <ul>
+        <li><code>GET /items/{item_id}</code> (ej: <a href="/items/123">/items/123</a>)</li>
+        <li><code>POST /greet</code> (con cuerpo JSON <code>{"name": "Tu Nombre"}</code>)</li>
+        <li><code>GET /</code> (esta página)</li>
+    </ul>
+</body>
+</html>

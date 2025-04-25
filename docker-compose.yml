@@ -1,0 +1,23 @@
+# myfastapiapp/docker-compose.yml
+
+version: '3.8' # Versión de la sintaxis de Docker Compose
+
+services:
+  web: # Define un servicio llamado 'web'
+    build:
+      context: . # Indica el directorio donde está el Dockerfile (el actual)
+      dockerfile: Dockerfile # Especifica el nombre del Dockerfile a usar
+    ports:
+      - "8000:80" # Mapea el puerto 8000 del host al puerto 80 del contenedor
+                   # Así accedes a la app en el host via http://localhost:8000
+    volumes:
+      # Monta el directorio actual del código fuente en el directorio de trabajo del contenedor.
+      # ¡Esto es CRUCIAL para el desarrollo! Los cambios que hagas en tu código local
+      # se reflejarán instantáneamente dentro del contenedor.
+      - .:/app
+    command: # Sobrescribe el CMD del Dockerfile para el entorno de desarrollo
+      # Agregamos --reload aquí para que Uvicorn reinicie al detectar cambios en el código
+      ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80", "--reload"]
+    # environment:
+      # Puedes definir variables de entorno aquí, por ejemplo:
+      # - MY_VARIABLE=my_value

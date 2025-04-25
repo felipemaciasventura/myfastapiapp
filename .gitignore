@@ -1,0 +1,41 @@
+# myfastapiapp/.gitignore
+
+# Ignorar entorno virtual de Python
+# Dependiendo del nombre que le diste, puede ser diferente
+venv/
+
+# Ignorar archivos de caché de Python
+*.pyc
+__pycache__/
+
+# Ignorar archivos de construcción y distribución
+.Python
+build/
+develop-eggs/
+dist/
+eggs/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.whl
+
+# Archivos de variables de entorno (a menudo contienen secretos)
+# Es crucial NO subir este tipo de archivos a repositorios públicos
+.env
+
+# Archivos de configuración de IDEs comunes
+.vscode/  # Visual Studio Code
+.idea/    # PyCharm
+
+# Archivos temporales del sistema operativo
+.DS_Store # macOS
+Thumbs.db # Windows
+
+# Archivos específicos de Uvicorn (si los llegara a crear)
+.uvicorn-cli.lock
+
+# Archivos Docker ignorados (el .dockerignore en sí SÍ debe ser incluido)
+# Si tuvieras archivos muy grandes que copias al contexto de build
+# pero no quieres trackear en git, podrías añadirlos aquí.
+# Por ejemplo: large_data_file.csv
