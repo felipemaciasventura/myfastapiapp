@@ -21,3 +21,9 @@ services:
     # environment:
       # Puedes definir variables de entorno aquí, por ejemplo:
       # - MY_VARIABLE=my_value
+    networks:
+      - test_network # Asocia el servicio a la red personalizada
+
+networks:
+  test_network: # Define una red personalizada
+    driver: bridge # Usa el controlador 'bridge'
